@@ -605,15 +605,32 @@
                 resultsContainer.innerHTML = `<div class="text-center py-12 text-red-500 text-sm border-2 border-dashed border-red-100 bg-red-50 rounded-2xl"><i class="fa-solid fa-triangle-exclamation text-3xl mb-2"></i><p>Профильные предметы не могут быть одинаковыми!</p></div>`;
                 return;
             }
+
             const professions = entCombinations[`${s1}+${s2}`] || entCombinations[`${s2}+${s1}`];
+
             if (professions) {
                 let html = '';
                 professions.forEach(prof => {
-                    html += `<div class="flex items-start gap-3 bg-gray-50 border border-gray-200 p-4 rounded-xl hover:border-blue-300 hover:bg-white transition shadow-xs"><span class="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-md mt-0.5">${prof.code}</span><div><h4 class="text-sm font-bold text-gray-900">${prof.name}</h4><span class="text-xs text-green-600 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Есть государственные гранты</span></div></div>`;
+                    html += `
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-gray-50 border border-gray-200 p-4 rounded-xl hover:border-blue-300 hover:bg-white transition shadow-xs">
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-md mt-0.5 shrink-0">${prof.code}</span>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-900 leading-tight">${prof.name}</h4>
+                                    <span class="text-[11px] text-green-600 font-medium block mt-0.5"><i class="fa-solid fa-circle-check mr-1"></i> Есть государственные гранты</span>
+                                </div>
+                            </div>
+                            <div class="shrink-0 self-end sm:self-center">
+                                <span class="bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold px-2.5 py-1 rounded-lg block text-center">
+                                    Порог: ${prof.threshold} б.
+                                </span>
+                            </div>
+                        </div>
+                    `;
                 });
                 resultsContainer.innerHTML = html;
             } else {
-                resultsContainer.innerHTML = `<div class="text-center py-12 text-gray-500 text-sm border-2 border-dashed border-gray-100 rounded-2xl"><i class="fa-solid fa-hourglass-half text-3xl mb-2 text-blue-500"></i><p class="font-semibold">Комбинация поддерживается ЕНТ!</p></div>`;
+                resultsContainer.innerHTML = `<div class="text-center py-12 text-gray-500 text-sm border-2 border-dashed border-gray-100 rounded-2xl"><i class="fa-solid fa-hourglass-half text-3xl mb-2 text-blue-500"></i><p class="font-semibold">Комбинация поддерживается ЕНТ, но профессий пока нет в базе.</p></div>`;
             }
         }
 
