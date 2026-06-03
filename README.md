@@ -161,11 +161,14 @@
                 <button onclick="filterBySubject('all')" class="subject-btn active-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-blue-600 bg-blue-600 text-white cursor-pointer">
                     <i class="fa-solid fa-list"></i> Все
                 </button>
-                <button onclick="filterBySubject('math-lit')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
-                    <i class="fa-solid fa-calculator text-red-500"></i> Мат. грамотность
-                </button>
                 <button onclick="filterBySubject('hist-kaz')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
                     <i class="fa-solid fa-book-atlas text-amber-600"></i> История Казахстана
+                </button>
+                <button onclick="filterBySubject('read-lit')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
+                    <i class="fa-solid fa-book-open text-blue-400"></i> Грамотность чтения
+                </button>
+                <button onclick="filterBySubject('math-lit')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
+                    <i class="fa-solid fa-calculator text-red-500"></i> Мат. грамотность
                 </button>
                 <button onclick="filterBySubject('math')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
                     <i class="fa-solid fa-square-root-variable text-blue-500"></i> Математика
@@ -184,6 +187,12 @@
                 </button>
                 <button onclick="filterBySubject('world-hist')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
                     <i class="fa-solid fa-landmark text-orange-600"></i> Всемирная история
+                </button>
+                <button onclick="filterBySubject('english')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
+                    <i class="fa-solid fa-language text-indigo-500"></i> Английский язык
+                </button>
+                <button onclick="filterBySubject('kaz-lit')" class="subject-btn flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium shadow-sm transition text-sm border-2 border-gray-200 bg-white text-gray-700 hover:border-blue-500 cursor-pointer">
+                    <i class="fa-solid fa-feather text-rose-500"></i> Каз. литература
                 </button>
             </div>
 
@@ -405,14 +414,17 @@
 
         // База данных видео-уроков под ЕНТ
         const entCourses = [
-            { id: 1, title: "Текстовые задачи и логика", subject: "math-lit", subjectName: "Мат. грамотность", lessons: 12, image: "https://images.unsplash.com/photo-1610824352934-c10d8706f83c?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/gU9U6gT776A", description: "Разбор задач на движение, работу, проценты и логику. Секретные лайфхаки для быстрого решения на ЕНТ." },
-            { id: 2, title: "Казахстан в период XIX века", subject: "hist-kaz", subjectName: "История Казахстана", lessons: 18, image: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/pCHYclgD4MI", description: "Национально-освободительные восстания (Кенесары Касымов, Исатай и Махамбет). Разбор дат и контекстов." },
-            { id: 3, title: "Тригонометрия: Формулы и Уравнения", subject: "math", subjectName: "Математика (профиль)", lessons: 24, image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/5mE0mFfscB8", description: "Всё от тригонометрического круга до отбора корней в сложных уравнениях из профильного ЕНТ." },
-            { id: 4, title: "Кинематика и Законы Ньютона", subject: "physics", subjectName: "Физика", lessons: 15, image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/8-Psh_1c-0c", description: "Разбираем векторы, ускорение, силы в природе и алгоритмы решения задач на динамику." },
-            { id: 5, title: "Органическая химия: Углеводороды", subject: "chemistry", subjectName: "Химия", lessons: 20, image: "https://images.unsplash.com/photo-1532187863486-abf9d39d6618?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/gXpM26n3q_Q", description: "Алканы, алкены, алкины. Номенклатура, химические свойства и цепочки превращений веществ." },
-            { id: 6, title: "Генетика и Молекулярная биология", subject: "biology", subjectName: "Биология", lessons: 16, image: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/9N4S1qD_eU4", description: "Законы Менделя, Моргана, биосинтез белка и решение генетических задач из ЕНТ." },
-            { id: 7, title: "Физическая география Земли", subject: "geography", subjectName: "География", lessons: 14, image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/8rYVnC9_4tY", description: "Литосфера, атмосфера, климатические пояса и геохронологическая таблица. То, на чем часто теряют баллы." },
-            { id: 8, title: "Эпоха Просвещения и Революции", subject: "world-hist", subjectName: "Всемирная история", lessons: 11, image: "https://images.unsplash.com/photo-1562673005-7693bd6d6e54?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/snL1BbeW2M4", description: "Разбор ключевых событий Нового времени: Английская и Французская буржуазные революции." }
+            { id: 1, title: "Казахстан в период XIX века", subject: "hist-kaz", subjectName: "История Казахстана", lessons: 18, image: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/pCHYclgD4MI", description: "Национально-освободительные восстания (Кенесары Касымов, Исатай и Махамбет). Разбор дат и контекстов." },
+            { id: 2, title: "Анализ скрытого смысла текста", subject: "read-lit", subjectName: "Грамотность чтения", lessons: 8, image: "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/snL1BbeW2M4", description: "Учимся быстро определять основную мысль автора, тип текста и ключевые тезисы без потери времени." },
+            { id: 3, title: "Текстовые задачи и логика", subject: "math-lit", subjectName: "Мат. грамотность", lessons: 12, image: "https://images.unsplash.com/photo-1610824352934-c10d8706f83c?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/gU9U6gT776A", description: "Разбор задач на движение, работу, проценты и логику. Секретные лайфхаки для быстрого решения на ЕНТ." },
+            { id: 4, title: "Тригонометрия: Формулы и Уравнения", subject: "math", subjectName: "Математика", lessons: 24, image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/5mE0mFfscB8", description: "Всё от тригонометрического круга до отбора корней в сложных уравнениях из профильного ЕНТ." },
+            { id: 5, title: "Кинематика и Законы Ньютона", subject: "physics", subjectName: "Физика", lessons: 15, image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/8-Psh_1c-0c", description: "Разбираем векторы, ускорение, силы в природе и алгоритмы решения задач на динамику." },
+            { id: 6, title: "Органическая химия: Углеводороды", subject: "chemistry", subjectName: "Химия", lessons: 20, image: "https://images.unsplash.com/photo-1532187863486-abf9d39d6618?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/gXpM26n3q_Q", description: "Алканы, алкены, алкины. Номенклатура, химические свойства и цепочки превращений веществ." },
+            { id: 7, title: "Генетика и Молекулярная биология", subject: "biology", subjectName: "Биология", lessons: 16, image: "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/9N4S1qD_eU4", description: "Законы Менделя, Моргана, биосинтез белка и решение генетических задач из ЕНТ." },
+            { id: 8, title: "Физическая география Земли", subject: "geography", subjectName: "География", lessons: 14, image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/8rYVnC9_4tY", description: "Литосфера, атмосфера, климатические пояса и геохронологическая таблица. То, на чем часто теряют баллы." },
+            { id: 9, title: "Эпоха Просвещения и Революции", subject: "world-hist", subjectName: "Всемирная история", lessons: 11, image: "https://images.unsplash.com/photo-1562673005-7693bd6d6e54?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/snL1BbeW2M4", description: "Разбор ключевых событий Нового времени: Английская и Французская буржуазные революции." },
+            { id: 10, title: "Времена глагола и Active/Passive Voice", subject: "english", subjectName: "Английский язык", lessons: 22, image: "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/snL1BbeW2M4", description: "Вся грамматика временной сетки английского языка, которая проверяется в контекстных заданиях ЕНТ." },
+            { id: 11, title: "XV-XVIII ғғ. жыраулар поэзиясы", subject: "kaz-lit", subjectName: "Казахская литература", lessons: 15, image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&auto=format&fit=crop&q=60", videoUrl: "https://www.youtube.com/embed/snL1BbeW2M4", description: "Асан Қайғы, Қазтуған, Доспамбет жыраулардың шығармашылықтары мен ЕНТ-да келетін негізгі сұрақтар." }
         ];
 
         // База данных для тестов
@@ -650,7 +662,7 @@
                 statusBlock.className = "mt-4 px-4 py-1.5 rounded-full text-xs font-bold bg-purple-950 text-purple-300 border border-purple-800 animate-pulse";
             }
         }
-        
+
         // Логика теста
         function renderQuiz() {
             const container = document.getElementById('quiz-questions-container');
