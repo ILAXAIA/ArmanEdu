@@ -64,6 +64,7 @@
                                 <option value="">Выберите предмет...</option>
                                 <option value="math">Математика</option>
                                 <option value="physics">Физика</option>
+                                <option value="informatics">Информатика</option>
                                 <option value="chemistry">Химия</option>
                                 <option value="biology">Биология</option>
                                 <option value="geography">География</option>
@@ -78,6 +79,7 @@
                                 <option value="">Выберите предмет...</option>
                                 <option value="math">Математика</option>
                                 <option value="physics">Физика</option>
+                                <option value="informatics">Информатика</option>
                                 <option value="chemistry">Химия</option>
                                 <option value="biology">Биология</option>
                                 <option value="geography">География</option>
@@ -439,11 +441,34 @@
 
         // База данных для калькулятора комбинаций
         const entCombinations = {
-            "math+physics": [{ code: "B062", name: "Информационные технологии (IT, Разработка, Computer Science)" }, { code: "B064", name: "Механика и металлообработка" }, { code: "B057", name: "Информационная безопасность" }, { code: "B063", name: "Электротехника и энергетика" }],
-            "math+geography": [{ code: "B046", name: "Финансы, экономика, аудит и управление" }, { code: "B044", name: "Менеджмент и маркетинг" }, { code: "B093", name: "Ресторанное дело и гостиничный бизнес" }],
-            "biology+chemistry": [{ code: "B086", name: "Общая медицина (Врач, Хирург, Педиатр)" }, { code: "B087", name: "Стоматология" }, { code: "B088", name: "Фармация" }],
-            "geography+world-hist": [{ code: "B091", name: "Туризм" }, { code: "B041", name: "Международные отношения и дипломатия" }],
-            "world-hist+kaz-lit": [{ code: "B042", name: "Юриспруденция / Право" }, { code: "B016", name: "Подготовка учителей истории" }]
+            "math+informatics": [
+                { code: "B057", name: "Информационные технологии (IT, Разработка, Computer Science)", threshold: 75 },
+                { code: "B058", name: "Информационная безопасность", threshold: 75 },
+                { code: "B011", name: "Подготовка учителей информатики", threshold: 75 }
+            ],
+            "math+physics": [
+                { code: "B064", name: "Механика и металлообработка", threshold: 50 },
+                { code: "B062", name: "Электротехника и энергетика", threshold: 50 },
+                { code: "B071", name: "Горное дело и добыча полезных ископаемых", threshold: 50 }
+            ],
+            "math+geography": [
+                { code: "B046", name: "Финансы, экономика, аудит и управление", threshold: 50 },
+                { code: "B044", name: "Менеджмент и маркетинг", threshold: 50 },
+                { code: "B145", name: "Государственный аудит", threshold: 50 }
+            ],
+            "biology+chemistry": [
+                { code: "B086", name: "Общая медицина (Врач, Хирург, Педиатр)", threshold: 75 },
+                { code: "B087", name: "Стоматология", threshold: 75 },
+                { code: "B088", name: "Фармация", threshold: 75 }
+            ],
+            "geography+world-hist": [
+                { code: "B034", name: "История", threshold: 50 },
+                { code: "B134", name: "Археология и этнология", threshold: 65 }
+            ],
+            "world-hist+kaz-lit": [
+                { code: "B042", name: "Юриспруденция / Право", threshold: 75 },
+                { code: "B023", name: "Режиссура, арт-менеджмент", threshold: 75 }
+            ]
         };
 
         const faqData = [
