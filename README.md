@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ArmanEdu.jpg">
     <title>ArmanEdu | Подготовка к ЕНТ</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -19,8 +20,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="text-2xl font-bold text-blue-600 cursor-pointer" onclick="navigateTo('main')">
-                        <i class="fa-solid fa-graduation-cap mr-2"></i>ArmanEdu
+                    <span class="text-2xl font-bold text-gray-900 cursor-pointer flex items-center gap-2" onclick="navigateTo('main')">
+                        <img src="ArmanEdu.jpg" alt="Logo" class="w-15 h-15 object-contain">
+                            ArmanEdu
                     </span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
