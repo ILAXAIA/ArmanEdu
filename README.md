@@ -12,6 +12,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-fontawesome/6.4.0/css/all.min.css">
+    <style>
+                @keyframes marqueeLeftToRight {
+                    0% { transform: translate3d(-50%, 0, 0); }
+                    100% { transform: translate3d(0, 0, 0); }
+                }
+                .marquee-box-right {
+                    display: flex;
+                    width: max-content;
+                    animation: marqueeLeftToRight 20s linear infinite;
+                }
+                .marquee-box-right:hover {
+                    animation-play-state: paused;
+                }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
 
@@ -39,6 +53,83 @@
             </div>
         </div>
     </nav>
+
+    <section class="bg-gray-50 py-6 overflow-hidden border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 mb-3">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-blue-600 flex items-center gap-1.5">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    Наши топ-преподаватели
+                </h3>
+            </div>
+
+            <div class="w-full overflow-hidden flex">
+                <div class="marquee-box-right gap-4 flex">
+
+                    <div class="flex gap-4 shrink-0">
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Алия Султанова</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">Мат. грамотность</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Арман Даутов</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">Физика и Математика</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Елена Ким</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">История Казахстана</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Мадина Искакова</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">Английский язык</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 shrink-0">
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Алия Султанова</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">Мат. грамотность</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Арман Даутов</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">Физика и Математика</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Елена Ким</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">История Казахстана</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-2xl border border-gray-100 flex items-center gap-3 w-64 shrink-0 shadow-xs">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=60" class="w-12 h-12 rounded-full object-cover border-2 border-blue-100 shrink-0">
+                            <div class="min-w-0">
+                                <h4 class="text-sm font-bold text-gray-900 truncate">Мадина Искакова</h4>
+                                <p class="text-[11px] text-gray-500 font-medium truncate">Английский язык</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     <!-- СТРАНИЦА 1: ГЛАВНАЯ (ОБЕРТКА) -->
     <div id="page-main">
